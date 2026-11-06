@@ -1,0 +1,29 @@
+Every unit, satellite, and organization in this story is fictional.
+
+Forward Site Orion. A small deployed team brings its satellite terminal up, far from any network.
+
+That dish is their main line home. Command chat, the voice net, and live video all ride on it.
+
+Terminal A transmits up to Kestrel Seven, thirty-five thousand, seven hundred eighty-six kilometers above the equator. That's the uplink, at fourteen point two hundred fifty gigahertz.
+
+Transponder K-U fourteen gigahertz shifts the signal down twenty-three hundred megahertz and beams it back. That's the downlink, at eleven point nine hundred fifty giga hertz.
+
+Everyone under the beam hears it: the team's headquarters, the ops center, and the SATCOM monitoring station.
+
+Then, somewhere inside the uplink footprint, an unknown emitter powers up and aims at Kestrel Seven.
+
+It transmits one pure, unmodulated tone, a C-W, right inside Task Force Orion's carrier.
+
+The satellite is a bent pipe. Whatever reaches its uplink goes out on every downlink, tone included.
+
+On the ground, the net falls apart. Signal quality collapses from ten decibels to barely two and a half. Chat won't send. Voice breaks up.
+
+At the regional ops center, the alarm goes up: Task Force Orion's command net is degraded. Nobody knows yet what's causing it.
+
+On a spectrum analyzer, a healthy carrier looks like a flat, noisy plateau.
+
+With the jammer on, a thin spike pokes out of it, narrower than the analyzer can resolve in terms of bandwidth. That's your target.
+
+You are the SATCOM watch on Kestrel Seven. Your tool is the spectrum analyzer.
+
+Find it. Characterize it. Report it. Restore the link.
