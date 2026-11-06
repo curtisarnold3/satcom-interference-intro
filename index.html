@@ -343,10 +343,11 @@ table.deb details.more summary:before{content:"▸ ";white-space:pre}table.deb d
 @media (orientation:portrait) and (max-width:700px){
   #rotateMsg{display:flex;position:fixed;inset:0;z-index:200;background:rgba(5,9,14,.96);align-items:center;justify-content:center;text-align:center;font-size:17px;line-height:1.6;color:#d5e1ec;padding:24px}
   #rotateMsg b{font-size:22px;color:#ffd84a}
+  body.introOn #rotateMsg{display:none}   /* intro plays fine in portrait; ask to rotate only for the analyzer */
 }
 </style>
 </head>
-<body>
+<body class="introOn">
 <div id="app">
   <header id="topbar">
     <div class="title">SATCOM Interference Introduction<small>Scenario: CW Easy</small></div>
@@ -3441,6 +3442,7 @@ const Intro = (function () {
     opts = opts || {};
     build(); readValues(); EV = events(); Narr.get(); Narr.stop();
     first = !!opts.first; onDone = opts.onDone || null;
+    document.body.classList.add('introOn');
     active = true; t = 0; dom.tag = dom.hud = dom.cap = dom.hudCls = dom.chap = dom.chrome = null; dom.capOn = null;
     el.root.hidden = false; el.root.style.opacity = '1'; el.root.style.transform = '';
     resize();
@@ -3455,6 +3457,7 @@ const Intro = (function () {
     active = false; playing = false; cancelAnimationFrame(raf);
     Narr.stop(); Snd.stopAll(); Snd.level();
     el.root.hidden = true; el.root.style.opacity = ''; el.root.style.transform = '';
+    document.body.classList.remove('introOn');
     U.store.set(KEY, '1');
     const cb = onDone; onDone = null; if (cb) cb();
   }
@@ -3500,7 +3503,7 @@ const Intro = (function () {
       Tutorial.start(true, () => Scenario.setPhase('BRIEF'));
     }
   }
-  if (Intro.autoplay()) Intro.start({ first: true, onDone: startApp }); else startApp();
+  if (Intro.autoplay()) Intro.start({ first: true, onDone: startApp }); else { document.body.classList.remove('introOn'); startApp(); }
 
   let last = performance.now();
   function frame(now) {
